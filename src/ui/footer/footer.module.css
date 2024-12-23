@@ -1,0 +1,109 @@
+footer {
+  padding-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+.textStyles {
+  color: #666b88;
+  line-height: 26px;
+  font-size: 16px;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+}
+
+footer ul li {
+  position: relative;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+footer .links a {
+  background-color: #fff;
+  text-decoration: none;
+  position: absolute;
+  left: 0;
+  transition: 300ms ease-in-out;
+}
+
+footer li:hover a,
+footer .links li svg {
+  left: 18px;
+  color: #009640;
+}
+
+footer h1 {
+  font-size: 18px;
+}
+
+footer ul.downloadList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 12px;
+}
+
+footer .download button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  gap: 12px;
+  color: black;
+  padding: 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 20px;
+  transition: 300ms ease-in;
+  background-color: #f8f8f8;
+}
+footer .download button svg {
+  color: #000;
+  transition: 300ms ease-in;
+}
+
+footer .download button:hover {
+  color: white;
+  background-color: #009640;
+}
+footer .download button:hover svg {
+  color: white;
+}
+
+footer .contact p a {
+  color: #009640;
+}
+footer .contact {
+  padding: 28px 0 20px;
+  border-top: 1px solid #e9e9e9;
+}
+footer .contact ul li {
+  border: 1px solid #e9e9e9;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transition: 0.3s ease-in-out;
+  color: #aaaaaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .contact ul li a {
+  color: #aaaaaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .contact ul li:hover {
+  background-color: #009640;
+  transform: translateY(-2px);
+}
+footer .contact ul li a:hover,
+footer .contact ul li:hover a {
+  color: #fff;
+}
