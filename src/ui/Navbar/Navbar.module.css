@@ -1,0 +1,146 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 0.5rem 1rem;
+  height: 80px;
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: #009640;
+}
+
+.active {
+  color: #009640;
+}
+
+.languageDropdown .dropdown-toggle {
+  border: none;
+  font-size: 14px;
+}
+ul li select {
+  border: none;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  padding: 0.3rem 0.6rem;
+  color: #009640;
+  height: 40px;
+}
+
+.languageButton {
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  padding: 0.3rem 0.6rem;
+  color: #009640;
+}
+.dropdownItem {
+  font-size: 14px;
+  color: #009640;
+  text-align: center;
+}
+
+.iconButton {
+  background-color: #f8f8f8;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #009640;
+  font-size: 1.25rem;
+  border: none;
+}
+
+.navbarToggler {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  background-color: #f8f8f8;
+}
+
+/*   Open state of the dialog  */
+dialog[open] {
+  transform: translateX(0);
+}
+
+/*   Closed state of the dialog   */
+dialog {
+  transform: translateX(-100%);
+  position: fixed;
+  margin: 0;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 50%;
+  border: none;
+  background-color: #fff;
+  min-height: 100vh;
+  transition: transform 0.7s ease-out, overlay 0.7s ease-out allow-discrete,
+    display 0.7s ease-out allow-discrete;
+}
+@starting-style {
+  dialog[open] {
+    transform: translateX(-100%);
+  }
+}
+dialog header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+}
+dialog header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.15s ease-out;
+  color: #000;
+}
+dialog header button:hover {
+  background-color: #0096416b;
+}
+
+dialog ul {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0;
+}
+dialog ul li {
+  width: 100%;
+  cursor: pointer;
+  padding: 16px 16px 16px 10px;
+  transition: 0.15s ease-out;
+}
+
+dialog ul li a {
+  width: 100%;
+  text-decoration: none;
+  transition: 0.15s ease-out;
+  color: #000;
+}
+dialog ul li a:hover,
+dialog ul li:hover {
+  color: #009640;
+}

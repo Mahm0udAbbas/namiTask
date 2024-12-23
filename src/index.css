@@ -1,3 +1,12 @@
+root {
+  --main-color-green: #009640;
+}
+
 body {
   font-family: "Roboto", sans-serif;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
