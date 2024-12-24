@@ -1,0 +1,13 @@
+.favoriteCard {
+  background-color: #0096400d;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 100%;
+}
+
+.favoriteCard h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  padding: 0.5rem;
+}
