@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <NavigationToggle>
-        <Logo />
+        <Logo className={"flex-grow-1"} />
         <Navbar />
         <RightSideMenu />
       </NavigationToggle>
