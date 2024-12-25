@@ -1,78 +1,29 @@
-import React from "react";
+import { useResumes } from "../../hooks/apiHooks";
 import JobCard from "../jobCard/JobCard";
-const jobCardsData = [
-  {
-    name: "Mahmoud",
-    jobTitle: "Software Engineer",
-    age: 30,
-    nationality: "Egyptian",
-    profileImage: "https://via.placeholder.com/80", // Replace with actual image URL
-    isFavorited: false,
-    gender: "male",
-  },
-  {
-    name: "Sara",
-    jobTitle: "Graphic Designer",
-    age: 27,
-    nationality: "Jordanian",
-    profileImage: "https://via.placeholder.com/80", // Replace with actual image URL
-    isFavorited: true,
-    gender: "female",
-  },
-  {
-    name: "Ali",
-    jobTitle: "Project Manager",
-    age: 35,
-    nationality: "Saudi",
-    profileImage: "https://via.placeholder.com/80", // Replace with actual image URL
-    isFavorited: false,
-    gender: "male",
-  },
-  {
-    name: "Laila",
-    jobTitle: "Marketing Specialist",
-    age: 28,
-    nationality: "Lebanese",
-    profileImage: "https://via.placeholder.com/80", // Replace with actual image URL
-    isFavorited: true,
-    gender: "female",
-  },
-  {
-    name: "Hassan",
-    jobTitle: "Driver",
-    age: 24,
-    nationality: "Indian",
-    profileImage: "https://via.placeholder.com/80", // Replace with actual image URL
-    isFavorited: false,
-    gender: "male",
-  },
-  {
-    name: "Aisha",
-    jobTitle: "Accountant",
-    age: 29,
-    nationality: "Sudanese",
-    profileImage: "https://via.placeholder.com/80", // Replace with actual image URL
-    isFavorited: true,
-    gender: "female",
-  },
-  {
-    name: "Omar",
-    jobTitle: "IT Technician",
-    age: 32,
-    nationality: "Yemeni",
-    profileImage: "https://via.placeholder.com/80", // Replace with actual image URL
-    isFavorited: false,
-    gender: "male",
-  },
-];
 
 export default function JobList() {
+  // useEffect(() => {
+  //   async function jobs() {
+  //     const jobs = await getJobs();
+  //     console.log(jobs);
+  //   }
+  //   jobs();
+  // }, []);
+  let { status, error, resumes } = useResumes();
+  if (status === "pending") {
+    return <div>loading</div>;
+  }
+
+  if (status === "error") {
+    return <span>Error: {error.message}</span>;
+  }
+  resumes = resumes.data.slice(0, 12);
   return (
     <div className="container">
       <div className="row">
-        {jobCardsData.map((job, index) => (
-          <div key={index} className="col-12 col-md-6  col-lg-4 mb-4">
-            <JobCard {...job} />
+        {resumes.map((resume) => (
+          <div key={resume.id} className="col-12 col-md-6  col-lg-4 mb-4">
+            <JobCard resume={resume} />
           </div>
         ))}
       </div>

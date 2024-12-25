@@ -1,0 +1,64 @@
+.swiperHeader {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.swiperHeader h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+.swiperHeader a {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  color: #009640;
+}
+.categoriesSwiper {
+  background: #fff;
+  border-radius: 12px;
+  margin-top: 10px;
+  padding: 0.75px;
+}
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0.65rem;
+  z-index: 1;
+}
+
+.card {
+  padding: 8px 12px;
+  display: flex;
+  background: #f8f8f8;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  gap: 8px;
+  border-radius: 12px;
+}
+
+.card:hover .cardText {
+  color: #009640;
+}
+
+.cardImg {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  object-fit: "cover";
+  width: 150px;
+  height: 100%;
+}
+
+.cardText {
+  color: #333;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  margin: 0;
+}

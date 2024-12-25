@@ -4,6 +4,7 @@ root {
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #fff;
 }
 ul {
   list-style-type: none;

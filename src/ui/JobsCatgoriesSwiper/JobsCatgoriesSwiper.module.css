@@ -1,0 +1,72 @@
+.swiperHeader {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.swiperHeader h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+.swiperHeader a {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  color: #009640;
+}
+/* .categoriesSwiper {
+  background: #fff;
+  border-radius: 12px;
+  margin-top: 10px;
+  padding: 0.75px;
+} */
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0.65rem;
+  z-index: 1;
+}
+
+.card {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cardImg {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  object-fit: "cover";
+  width: 100%;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.9rem;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.2) 61.5%,
+    #000000 100%
+  );
+  display: flex;
+  align-items: end;
+}
+
+.cardText {
+  color: white;
+  font-size: 16px;
+
+  font-weight: bold;
+  margin: 0;
+}
