@@ -4,11 +4,12 @@ import { Navigation } from "swiper/modules";
 import styles from "./SecondCategorySwiper.module.css"; // Add your CSS for styling if needed
 import { Link } from "react-router";
 import { useCategories, useJobs } from "../../hooks/apiHooks";
+import SpinnerMini from "../Spinner/SpinnerMini";
 
 export default function SecondCategoriesSwiper() {
   const { status, error, jobs } = useJobs();
   if (status === "pending") {
-    return <div>loading</div>;
+    return <SpinnerMini />;
   }
 
   if (status === "error") {

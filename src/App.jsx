@@ -6,6 +6,7 @@ import AppLayout from "./ui/AppLayout/AppLayout";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import PageNotFound from "./ui/PageNotFound/PageNotFound";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,7 +27,8 @@ function App() {
             <Route path="about" element={<Home />} />
             <Route path="contact" element={<Home />} />
             <Route path="login" element={<LoginPage />} />
-          </Route>
+          </Route>{" "}
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />

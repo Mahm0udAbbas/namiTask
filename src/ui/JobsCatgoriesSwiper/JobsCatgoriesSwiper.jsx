@@ -4,11 +4,12 @@ import { Autoplay } from "swiper/modules";
 import styles from "./JobsCatgoriesSwiper.module.css"; // Add your CSS for styling if needed
 import { Link } from "react-router";
 import { useCategories } from "../../hooks/apiHooks";
+import SpinnerMini from "../Spinner/SpinnerMini";
 
 export default function JobsCatgoriesSwiper() {
   const { error, isLoading, categories } = useCategories();
   if (isLoading) {
-    return <div>loading</div>;
+    return <SpinnerMini />;
   }
 
   if (error) {
@@ -30,15 +31,25 @@ export default function JobsCatgoriesSwiper() {
             disableOnInteraction: false,
           }}
           spaceBetween={10}
-          slidesPerView={"auto"}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
         >
           {categories.data.map((category) => (
-            <SwiperSlide key={category.id} style={{ width: "220px" }}>
+            <SwiperSlide key={category.id}>
               <Link className={styles.card}>
                 <img
                   src={category.image}
                   alt={category.name}
-                  className={styles.cardImg}
+                  className={`img-fluid ${styles.cardImg}`}
                 />
                 <div className={styles.overlay}>
                   <h6 className={styles.cardText}>{category.name}</h6>

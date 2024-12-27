@@ -1,0 +1,20 @@
+.pageNotFound {
+  height: 100vh;
+  background-color: var(--color-grey-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4.8rem;
+}
+.pageNotFound div {
+  background-color: rgba(128, 128, 128, 0.386);
+  border: 1px solid gray;
+  border-radius: 0.75rem;
+  padding: 4.8rem;
+  flex: 0 1 96rem;
+  text-align: center;
+
+  & h1 {
+    margin-bottom: 3.2rem;
+  }
+}

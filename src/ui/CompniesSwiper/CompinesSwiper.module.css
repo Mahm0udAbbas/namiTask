@@ -7,13 +7,6 @@
 .swiperHeader h3 {
   font-size: 1rem;
   font-weight: bold;
-  margin: 0;
-}
-.swiperHeader a {
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0;
-  color: #009640;
 }
 .categoriesSwiper {
   background: #fff;
@@ -46,13 +39,17 @@
 .card:hover .cardText {
   color: #009640;
 }
+.imgContainer {
+  width: 100%;
+  height: 70px;
+}
 
 .cardImg {
-  aspect-ratio: 1;
   border-radius: 12px;
-  object-fit: "cover";
-  width: 150px;
+  object-fit: contain;
+  width: 100%;
   height: 100%;
+  /* width: 250px; */
 }
 
 .cardText {

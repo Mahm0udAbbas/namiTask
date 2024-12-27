@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router";
 import styles from "./Navbar.module.css";
 import { BiBell, BiUser } from "react-icons/bi";
 export default function RightSideMenu() {
+  const navigate = useNavigate();
+  function login() {
+    navigate("/login");
+  }
   return (
     <>
       <ul className="d-flex flex-grow-1 align-items-center justify-content-end me-2 gap-2 gap-md-4">
@@ -21,12 +26,12 @@ export default function RightSideMenu() {
           </select>
         </li>
         <li>
-          <button className={styles.iconButton}>
+          <button onClick={login} className={styles.iconButton}>
             <BiBell />
           </button>
         </li>
         <li>
-          <button className={styles.iconButton}>
+          <button onClick={login} className={styles.iconButton}>
             <BiUser />
           </button>
         </li>

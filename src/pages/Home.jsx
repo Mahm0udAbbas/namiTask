@@ -8,16 +8,22 @@ import FIlterList from "../ui/FIlters/FIlterList";
 import HeroSection from "../ui/heroSection/heroSection";
 import JobList from "../ui/JobList/JobList";
 import JobsCatgoriesSwiper from "../ui/JobsCatgoriesSwiper/JobsCatgoriesSwiper";
-import {
-  age,
-  countries,
-  gender,
-  nationalities,
-  religion,
-} from "../ui/FIlters/filterConstant";
+import { age, gender, religion } from "../ui/FIlters/filterConstant";
 import styles from "./Home.module.css";
+import { useCountries, useNationalities } from "../hooks/apiHooks";
 
 export default function Home() {
+  const {
+    isLoading: nationalitiesIsLoading,
+    error: nationalitiesError,
+    nationalities,
+  } = useNationalities();
+  const {
+    isLoading: countriesIsLoading,
+    error: countriesError,
+    countries,
+  } = useCountries();
+
   return (
     <section className="container py-4">
       <HeroSection />
@@ -35,10 +41,18 @@ export default function Home() {
             <SecondCategoriesSwiper />
           </section>
           <section
-            className={`d-flex  gap-3 overflow-x-scroll my-3 ${styles.filter}`}
+            className={`d-flex  gap-3 align-items-center  overflow-x-scroll my-3 ${styles.filter}`}
           >
-            <FIlterList label="Country" options={countries} />
-            <FIlterList label="Nationality" options={nationalities} />
+            {countriesIsLoading ? (
+              ""
+            ) : (
+              <FIlterList label="Country" options={countries.data} />
+            )}
+            {nationalitiesIsLoading ? (
+              ""
+            ) : (
+              <FIlterList label="Nationality" options={nationalities.data} />
+            )}
             <FIlterList label="Age" options={age} />
             <FIlterList label="Gender" options={gender} />
             <FIlterList label="Religion" options={religion} />

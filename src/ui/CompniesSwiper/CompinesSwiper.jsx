@@ -4,11 +4,12 @@ import { Autoplay } from "swiper/modules";
 import styles from "./CompinesSwiper.module.css"; // Add your CSS for styling if needed
 import { Link } from "react-router";
 import { useCompanies } from "../../hooks/apiHooks";
+import SpinnerMini from "../Spinner/SpinnerMini";
 
 export default function CompinesSwiper() {
   const { status, error, companies } = useCompanies();
   if (status === "pending") {
-    return <div>loading</div>;
+    return <SpinnerMini />;
   }
 
   if (status === "error") {
@@ -29,21 +30,31 @@ export default function CompinesSwiper() {
             delay: 3000,
             disableOnInteraction: false,
           }}
-          spaceBetween={10}
-          slidesPerView={"auto"}
+          spaceBetween={30}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 4,
+            },
+            1024: {
+              slidesPerView: 5,
+            },
+          }}
         >
           {companies.data.map(({ logo, company }) => (
-            <SwiperSlide key={company.id} style={{ width: "fit-content" }}>
-              <Link>
-                <div className={styles.card}>
+            <SwiperSlide key={company.id}>
+              <Link className={styles.card}>
+                <div className={styles.imgContainer}>
                   <img
                     src={logo}
                     alt={company.name}
                     className={styles.cardImg}
                   />
-                  <div>
-                    <p className={styles.cardText}>{company.company_name_en}</p>
-                  </div>
+                </div>
+                <div>
+                  <p className={styles.cardText}>{company.company_name_en}</p>
                 </div>
               </Link>
             </SwiperSlide>

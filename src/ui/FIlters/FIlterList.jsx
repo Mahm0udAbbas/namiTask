@@ -13,8 +13,12 @@ export default function FIlterList({ label, options }) {
           All
         </option>
         {options.map((option) => (
-          <option key={option} value={option} className="d-inline-block">
-            {option}
+          <option
+            key={option.id}
+            value={option.name}
+            className="d-inline-block"
+          >
+            {option.name}
           </option>
         ))}
       </select>

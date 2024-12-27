@@ -4,11 +4,12 @@ import { Navigation } from "swiper/modules";
 import styles from "./CategorySwiper.module.css"; // Add your CSS for styling if needed
 import { Link } from "react-router";
 import { useCategories } from "../../hooks/apiHooks";
+import SpinnerMini from "../Spinner/SpinnerMini";
 
 export default function CategoriesSwiper() {
   const { error, isLoading, categories } = useCategories();
   if (isLoading) {
-    return <div>loading</div>;
+    return <SpinnerMini />;
   }
 
   if (error) {

@@ -1,0 +1,7 @@
+.forgetPassword {
+  color: #009640;
+  text-transform: capitalize;
+}
+.forgetPassword:hover {
+  text-decoration: underline;
+}

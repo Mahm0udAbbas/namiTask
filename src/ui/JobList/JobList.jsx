@@ -1,17 +1,11 @@
 import { useResumes } from "../../hooks/apiHooks";
 import JobCard from "../jobCard/JobCard";
+import Spinner from "../Spinner/Spinner";
 
 export default function JobList() {
-  // useEffect(() => {
-  //   async function jobs() {
-  //     const jobs = await getJobs();
-  //     console.log(jobs);
-  //   }
-  //   jobs();
-  // }, []);
   let { status, error, resumes } = useResumes();
   if (status === "pending") {
-    return <div>loading</div>;
+    return <Spinner />;
   }
 
   if (status === "error") {

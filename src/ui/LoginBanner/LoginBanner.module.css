@@ -1,0 +1,14 @@
+.banner {
+  padding: 2rem 0;
+}
+.banner h1 {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+}
+.banner p {
+  color: #777;
+  font-size: 1rem;
+  margin: 0;
+}
